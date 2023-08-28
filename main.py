@@ -70,31 +70,33 @@ def getBeijinTime():
     type = ""
     hea = {'User-Agent': 'Mozilla/5.0'}
     url = r'https://www.beijing-time.org/t/time.asp'
-    if open_get_weather == "True":
-        getWeather()
-    r = requests.get(url=url, headers=hea)
-    if r.status_code == 200:
-        result = r.text
-        a = set_push
-        pattern = re.compile('nhrs=(\\d+)')
-        find = re.search(pattern, result)
-        hour = find.group(1)
-        min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
-        max_ratio = math.ceil(int(hour) / 3)
-        print(min_ratio)
-        print(max_ratio)
-        max_ratio = int(hour)
-        min_1 = 55860 * min_ratio
-        max_1 = 61700 * max_ratio
-        min_1 = int(K * min_1)
-        max_1 = int(K * max_1)
-        print("天气系数是")
-        print(K)
-        print(min_1)
-        print(max_1)
-    else:
-        print("获取北京时间失败")
-        return
+    # if open_get_weather == "True":
+    #     getWeather()
+    # r = requests.get(url=url, headers=hea)
+    # if r.status_code == 200:
+    #     result = r.text
+    #     a = set_push
+    #     pattern = re.compile('nhrs=(\\d+)')
+    #     find = re.search(pattern, result)
+    #     hour = find.group(1)
+    #     min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
+    #     max_ratio = math.ceil(int(hour) / 3)
+    #     print(min_ratio)
+    #     print(max_ratio)
+    #     max_ratio = int(hour)
+    #     min_1 = 55860 * min_ratio
+    #     max_1 = 61700 * max_ratio
+    #     min_1 = int(K * min_1)
+    #     max_1 = int(K * max_1)
+    #     print("天气系数是")
+    #     print(K)
+    #     print(min_1)
+    #     print(max_1)
+    # else:
+    #     print("获取北京时间失败")
+    #     return
+    min_1 = 29049
+    max_1 = 29984
     if min_1 != 0 and max_1 != 0:
         user_mi = sys.argv[1]
         # 登录密码
