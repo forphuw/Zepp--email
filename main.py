@@ -226,10 +226,7 @@ def get_time():
         t = response['data']['t']
         return t
     except:
-        time.sleep(2)
-        url = 'https://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
-        response = requests.get(url, headers=headers,timeout=10).json()
-        t = response['data']['t']
+        t = int(datetime.now().timestamp()*1000)
         return t
 
 
