@@ -226,7 +226,7 @@ def get_time():
         t = response['data']['t']
         return t
     except:
-        t = int(datetime.now().timestamp()*1000)
+        t = int(datetime.datetime.now().timestamp()*1000)
         return t
 
 
