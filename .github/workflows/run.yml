@@ -7,7 +7,7 @@ on:
   #  branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '7 12 * * *' # 修改你的定时配置
+    - cron: '20 12 * * *' # 修改你的定时配置
   watch:
     types: started
 
